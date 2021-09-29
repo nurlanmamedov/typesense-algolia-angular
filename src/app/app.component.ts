@@ -18,8 +18,9 @@ const typesenseInstantsearchAdapter = new TypesenseInstantsearchAdapter({
   //  So you can pass any parameters supported by the search endpoint below.
   //  queryBy is required.
   additionalSearchParameters: {
-    queryBy: "title,author"
-  }
+    queryBy: "title,author",
+  },
+  
 });
 const searchClient:any = typesenseInstantsearchAdapter.searchClient;
 
@@ -31,11 +32,16 @@ const searchClient:any = typesenseInstantsearchAdapter.searchClient;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  
+
+  ngOnInit(){
+  }
+
   config = {
-    indexName: 'books',
-    searchClient,
+    indexName: 'books3',
+    searchClient
   };
 }
