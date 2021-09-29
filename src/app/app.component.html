@@ -15,34 +15,24 @@
     <div class="search-panel">
       <div class="search-panel__results">
         <div class="searchbox">
-          <ais-search-box placeholder=""></ais-search-box>
+          <ais-search-box placeholder="type to search"></ais-search-box>
         </div>
 
-        <!-- <ais-hits>
-          <ng-template let-hits="hits">
-            <div *ngFor="let hit of hits">
-              <ais-highlight attribute="title" [hit]="hit"></ais-highlight>
-            </div>
-          </ng-template>
-        </ais-hits> -->
-        
         <ais-configure [searchParameters]="{ hitsPerPage: 3 }"></ais-configure>
-        <ais-hits>
-          <ng-template let-hits="hits">
-            <ol class="ais-Hits-list">
-              <li *ngFor="let hit of hits" class="ais-Hits-item">
-               <!-- {{hit | json }} -->
-               <div class="hit-title">
-                <ais-highlight attribute="title" [hit]="hit" ></ais-highlight>
-              </div>
-              <div class="hit-author">
-                <ais-highlight attribute="author" [hit]="hit"></ais-highlight>
-              </div>
-              <div class="hit-price">${{hit.ratings}}</div>
-              </li>
-            </ol>
-          </ng-template>
-        </ais-hits>
+        <div style="display: flex;">
+
+          <div style="width: 20%;">
+            <app-refinement-list></app-refinement-list>
+          </div>
+          <div style="width: 80%;">
+            <app-results> </app-results>
+          </div>
+        </div>
+
+
+        <!-- operator="or" showMoreLabel="More please" showLessLabel="Less please" -->
+        
+
 
         <div class="pagination">
           <ais-pagination></ais-pagination>
